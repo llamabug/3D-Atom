@@ -1,0 +1,90 @@
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+* {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+    font-family: Notable;
+    text-decoration: wavy;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+
+h3 {
+    font-family: Notable;
+    text-decoration: wavy;
+    font-size: 34px;
+}
+
+p { 
+    font-size: 19px;
+}
+
+button { 
+    color: white;
+    font-size: 19px;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+main {
+    color: white;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 150px;
+    min-height: 400vh;
+}
+
+section {
+    padding: 16px;
+    background: rgba(0, 85, 128, 0.35);
+    line-height: 1.5;
+    align-self: start;
+}
+
+section:nth-child(odd) {
+    grid-column: 2 / 6;
+}
+
+section:nth-child(even) {
+    grid-column: 8 / 12;
+}
+
+
+footer {
+    background-color: rgba(0, 85, 128, 0.15);
+    color: #fff;
+    height: 40px;
+}
+
+.display.fade {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.display {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
