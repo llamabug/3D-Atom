@@ -26,21 +26,31 @@ const clock = new THREE.Timer();
 
 const geometry = new THREE.SphereGeometry(8, 20, 20);
 
-const nucleusTexture = new THREE.TextureLoader().load('nucleus.jpeg');
-const texture = new THREE.TextureLoader().load('electron.webp');
+const nucleusTexture = new THREE.TextureLoader().load(
+    `${import.meta.env.BASE_URL}nucleus.jpeg`
+);
 
+const texture = new THREE.TextureLoader().load(
+    `${import.meta.env.BASE_URL}electron.webp`
+);
+
+const protonMaterial = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load(
+        `${import.meta.env.BASE_URL}proton.jpeg`
+    )
+});
+
+const neutronMaterial = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load(
+        `${import.meta.env.BASE_URL}neutron.jpeg`
+    )
+});
 const nucleusMaterial = new THREE.MeshBasicMaterial({
     map: nucleusTexture,
     transparent: true
 });
 const material = new THREE.MeshBasicMaterial({
     map: texture
-});
-const protonMaterial = new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load('proton.jpeg')
-});
-const neutronMaterial = new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load('neutron.jpeg')
 });
 const protonGeometry = new THREE.SphereGeometry(1.5,20,20)
 
